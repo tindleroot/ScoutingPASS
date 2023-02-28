@@ -943,7 +943,7 @@ function save_match_local_data() {
   // Fetch key for the current match data
   // match level + match # + team #
   // const key = document.getElementById("input_m").value + "," + document.getElementById("input_l").value + "," + document.getElementById("input_t").value
-  const key = document.getElementById("input_m").value + document.getElementById("input_t").value
+  const key = 'hi'
 
   // Add or overwrite existing data for key
   stored_object[key] = data
