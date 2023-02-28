@@ -923,7 +923,7 @@ function updateQRHeader() {
 }
 
 
-function qr_regenerate() {
+function save_match_local_data() {
   // Validate required pre-match date (event, match, level, robot, scouter)
   if (validateData() == false) {
     // Don't allow a swipe until all required data is filled in
@@ -933,10 +933,27 @@ function qr_regenerate() {
   // Get data
   data = getData(true)
 
-  // Regenerate QR Code
-  qr.makeCode(data)
+  // Get string from local memory and parse
+  let stored_str = localStorage.getItem('scouting_pass_data')
+  if (stored_str === null) {
+    stored_str = '{}'
+  }
+  let stored_object = JSON.parse(stored_str)
 
-  updateQRHeader()
+  // Fetch key for the current match data
+  // match level + match # + team #
+  const key = document.getElementById("input_m").value + document.getElementById("input_t").value
+
+  // Add or overwrite existing data for key
+  stored_object[key] = data
+  
+  // write back to local data
+  localStorage.setItem('scouting_pass_data', JSON.stringify(stored_object))
+
+  // Regenerate QR Code
+  // qr.makeCode(data)
+
+  // updateQRHeader()
   return true
 }
 
@@ -1060,7 +1077,7 @@ function moveTouch(e) {
 };
 
 function swipePage(increment) {
-  if (qr_regenerate() == true) {
+  if (save_match_local_data() == true) {
     slides = document.getElementById("main-panel-holder").children
     if (slide + increment < slides.length && slide + increment >= 0) {
       slides[slide].style.display = "none";
