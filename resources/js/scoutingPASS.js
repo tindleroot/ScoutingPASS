@@ -941,8 +941,7 @@ function save_match_local_data() {
   let stored_object = JSON.parse(stored_str)
 
   // Fetch key for the current match data
-  console.log(document.getElementById("input_l").value)
-  const key = `${document.getElementById("input_m").value},${document.getElementById("input_l").value},${document.getElementById("input_t").value}`
+  const key = `${document.getElementById("input_m").value},${getLevel()},${document.getElementById("input_t").value}`
 
   // Add or overwrite existing data for key
   stored_object[key] = data
