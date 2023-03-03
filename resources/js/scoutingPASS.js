@@ -931,7 +931,7 @@ function save_match_local_data() {
   }
 
   // Get data
-  data = getData(true)
+  data = getData(false)
 
   // Get string from local memory and parse
   let stored_str = localStorage.getItem('scouting_pass_data')

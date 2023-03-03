@@ -14,17 +14,21 @@ function setUpGoogleSheets() {
         console.log(`${key}: ${value}\n`);
       }
 
-      let localData = JSON.parse(localStorage.getItem('scouting_pass_data'))
+      let localDataString = localStorage.getItem('scouting_pass_data')
 
-      if (localData == null) {
-        
+      if (localDataString === null) {
+        alert('Error!', 'Cannot fetch local data')
       }
+      
+      let localData = JSON.parse(localDataString)
 
-      fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
+      for (dataPoint in localData) {
+        fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: dataPoint })
         .then(response => { 
               alert('Success!', response) })
         .catch(error => {
               alert('Error!', error.message)})
+      }
 
       btn.disabled = false
       btn.innerHTML = "Send to Google Sheets"
