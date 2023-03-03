@@ -14,6 +14,12 @@ function setUpGoogleSheets() {
         console.log(`${key}: ${value}\n`);
       }
 
+      let localData = JSON.parse(localStorage.getItem('scouting_pass_data'))
+
+      if (localData == null) {
+        
+      }
+
       fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
         .then(response => { 
               alert('Success!', response) })
