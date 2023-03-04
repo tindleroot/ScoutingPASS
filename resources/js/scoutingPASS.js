@@ -943,10 +943,10 @@ function save_match_local_data() {
   // Fetch key for the current match data
   const key = `${document.getElementById("input_m").value},${getLevel()},${document.getElementById("input_t").value}`
 
-  console.log(data)
-
   // Add or overwrite existing data for key
-  stored_object[key] = data
+  data_object = {}
+  data.forEach((value, key) => data_object[key] = value)
+  stored_object[key] = data_object
   
   // write back to local data
   localStorage.setItem('scouting_pass_data', JSON.stringify(stored_object))
