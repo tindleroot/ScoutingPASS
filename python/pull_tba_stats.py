@@ -2,9 +2,8 @@ import requests
 
 def appendTBAMatchResultsToSheet(eventCode: str):
     results = getTBAMatchResults(eventCode)
-    matchesByKey = {}
     for match in results:
-        matchesByKey[match['key']] = match
+        red_bots = match['alliances']['red']['team_keys']
     # fetch all match results for current event
     # load match details we care about into a map by match key
     # fetch rows from scouting sheet
@@ -17,4 +16,4 @@ def getTBAMatchResults(eventCode: str):
     print(response.json())
     return response.json()
 
-getTBAMatchResults('2023wasno')
+getTBAMatchResults('2023week0')
