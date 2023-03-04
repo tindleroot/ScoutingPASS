@@ -31,16 +31,12 @@ function setUpGoogleSheets() {
         .then(response => { 
           console.log(`SUCCESS: ${response}`)
           delete localData[dataPoint]
-          return true
         })
         .catch(error => {
           console.log(`ERROR: ${error}`)
-          return false
+          failedSubmissions += 1
         })
       totalSubmissions += 1
-      if (!callSuccess) {
-        failedSubmissions += 1
-      }
     }
 
     alert(`Uploaded ${totalSubmissions - failedSubmissions}/${totalSubmissions} matches`)
