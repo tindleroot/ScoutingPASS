@@ -931,7 +931,7 @@ function save_match_local_data() {
   }
 
   // Get data
-  data = getData(true)
+  let data = getData(false)
 
   // Get string from local memory and parse
   let stored_str = localStorage.getItem('scouting_pass_data')
@@ -944,7 +944,9 @@ function save_match_local_data() {
   const key = `${document.getElementById("input_m").value},${getLevel()},${document.getElementById("input_t").value}`
 
   // Add or overwrite existing data for key
-  stored_object[key] = data
+  data_object = {}
+  data.forEach((value, key) => data_object[key] = value)
+  stored_object[key] = data_object
   
   // write back to local data
   localStorage.setItem('scouting_pass_data', JSON.stringify(stored_object))
