@@ -30,7 +30,9 @@ function setUpGoogleSheets() {
               alert('Error!', error.message)})
       }
 
+      alert('Success!')
+
       btn.disabled = false
       btn.innerHTML = "Send to Google Sheets"
     })
-}
+  }
