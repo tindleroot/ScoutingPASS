@@ -27,7 +27,7 @@ function setUpGoogleSheets() {
 
       for (const dataPoint in localData) {
         let fd = new FormData()
-        for (const key of localData[dataPoint]) {
+        for (const key in localData[dataPoint]) {
           fd.append(key, localData[dataPoint][key])
         }
         for (const [key, value] of fd) {
