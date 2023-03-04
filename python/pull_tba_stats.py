@@ -17,4 +17,4 @@ def getTBAMatchResults(eventCode: str):
     print(response.json())
     return response.json()
 
-getTBAMatchResults('2023week0')
+getTBAMatchResults('2023wasno')
