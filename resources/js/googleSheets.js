@@ -22,7 +22,7 @@ function setUpGoogleSheets() {
       
       let localData = JSON.parse(localDataString)
 
-      for (dataPoint in localData) {
+      for (const dataPoint in localData) {
         let fd = new FormData()
         for (let [key, value] of dataPoint) {
           fd.append(key, value)
