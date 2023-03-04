@@ -19,7 +19,7 @@ var config_data = `
       "type": "event",
       "defaultValue": "2023wasno",
       "required": "true",
-      "disabled": "false"
+      "disabled": "true"
     },
     { "name": "Match Level",
       "code": "l",
@@ -146,11 +146,6 @@ var config_data = `
       "gsCol": "defenderTeamNum",
       "type": "text"
     },
-    { "name": "Smart Placement<br>(creates Links)",
-      "code": "lnk",
-      "gsCol": "smartPlacement",
-      "type": "bool"
-    },
     { "name": "Floor Pick UP",
       "code": "fpu",
       "gsCol": "floorPickUp",
@@ -165,11 +160,6 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Docking Timer",
-      "code": "dt",
-      "gsCol": "dockingTime",
-      "type": "timer"
-    },
     { "name": "Final Status",
       "code": "fs",
       "gsCol": "endgameStatus",

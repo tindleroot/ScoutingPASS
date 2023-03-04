@@ -46,7 +46,7 @@ function setUpGoogleSheets() {
         totalSubmissions += 1
       }
 
-      alert('Success!', `Uploaded ${totalSubmissions - failedSubmissions}/${totalSubmissions} matches`)
+      alert(`Uploaded ${totalSubmissions - failedSubmissions}/${totalSubmissions} matches`)
       localStorage.setItem('scouting_pass_data', JSON.stringify(localData))
 
       btn.disabled = false
