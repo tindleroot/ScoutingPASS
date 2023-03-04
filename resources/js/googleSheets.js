@@ -25,7 +25,7 @@ function setUpGoogleSheets() {
       for (dataPoint in localData) {
         fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: dataPoint })
         .then(response => { 
-              alert('Success!', response) })
+              console.log(response) })
         .catch(error => {
               alert('Error!', error.message)})
       }
