@@ -1,17 +1,12 @@
-async function getResponse(scriptURL, fd) {
-  
-}
-
 function setUpGoogleSheets() {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxLjzZfoJhkK1ANwky-eMH5KqP9Vpet9G-zfvgxffRpplVHNLx6PILCrrB9jF_98iZAbw/exec'
     const form = document.querySelector('#scoutingForm')
-    const btn = document.querySelector('#submit')
- 
-    
-    form.addEventListener('submit', e => doSubmit(e))
+    form.addEventListener('submit', e => doSubmit(e, document))
   }
 
-  async function doSubmit(e) {
+  async function doSubmit(e, document) {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxLjzZfoJhkK1ANwky-eMH5KqP9Vpet9G-zfvgxffRpplVHNLx6PILCrrB9jF_98iZAbw/exec'
+    const btn = document.querySelector('#submit')
+
     e.preventDefault()
     btn.disabled = true
     btn.innerHTML = "Sending..."
