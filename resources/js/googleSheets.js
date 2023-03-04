@@ -22,6 +22,9 @@ function setUpGoogleSheets() {
       
       let localData = JSON.parse(localDataString)
 
+      let totalSubmissions = 0
+      let failedSubmissions = 0
+
       for (const dataPoint in localData) {
         let fd = new FormData()
         for (const key of localData[dataPoint]) {
@@ -33,12 +36,17 @@ function setUpGoogleSheets() {
 
         fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
         .then(response => { 
-              console.log(response) })
+          console.log(`SUCCESS: ${response}`) })
         .catch(error => {
-              alert('Error!', error.message)})
+          console.log(`ERROR: ${response}`)
+          failedSubmissions += 1
+        })
+
+
+        totalSubmissions += 1
       }
 
-      alert('Success!')
+      alert('Success!', `Uploaded ${totalSubmissions - failedSubmissions}/${totalSubmissions} matches`)
 
       btn.disabled = false
       btn.innerHTML = "Send to Google Sheets"
