@@ -1,3 +1,16 @@
+async function getResponse(scriptURL, fd) {
+  fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
+        .then(response => { 
+          console.log(`SUCCESS: ${response}`)
+          delete localData[dataPoint]
+          return true
+        })
+        .catch(error => {
+          console.log(`ERROR: ${error}`)
+          return false
+        })
+}
+
 function setUpGoogleSheets() {
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxLjzZfoJhkK1ANwky-eMH5KqP9Vpet9G-zfvgxffRpplVHNLx6PILCrrB9jF_98iZAbw/exec'
     const form = document.querySelector('#scoutingForm')
@@ -8,11 +21,6 @@ function setUpGoogleSheets() {
       e.preventDefault()
       btn.disabled = true
       btn.innerHTML = "Sending..."
-
-      // let fd = getData(false)
-      // for (const [key, value] of fd) {
-      //   console.log(`${key}: ${value}\n`);
-      // }
 
       let localDataString = localStorage.getItem('scouting_pass_data')
 
@@ -30,20 +38,17 @@ function setUpGoogleSheets() {
         for (const key in localData[dataPoint]) {
           fd.append(key, localData[dataPoint][key])
         }
-        for (const [key, value] of fd) {
-          console.log(`${key}: ${value}\n`);
-        }
+        // for (const [key, value] of fd) {
+        //   console.log(`${key}: ${value}\n`);
+        // }
 
-        fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
-        .then(response => { 
-          console.log(`SUCCESS: ${response}`)
-          delete localData[dataPoint]
-        })
-        .catch(error => {
-          console.log(`ERROR: ${response}`)
-          failedSubmissions += 1
-        })
-        totalSubmissions += 1
+        const callSuccess = async () => {
+          await getResponse(scriptURL, fd)
+          totalSubmissions += 1
+          if (!callSuccess) {
+            failedSubmissions += 1
+          }
+        }
       }
 
       alert(`Uploaded ${totalSubmissions - failedSubmissions}/${totalSubmissions} matches`)
