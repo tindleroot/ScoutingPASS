@@ -22,18 +22,24 @@ function setUpGoogleSheets() {
       
       let localData = JSON.parse(localDataString)
 
-      for (dataPoint in localData) {
-        let fd = new FormData()
-        for (let [key, value] of dataPoint) {
-          fd.append(key, value)
-        }
-
-        fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
+      fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
         .then(response => { 
               console.log(response) })
         .catch(error => {
               alert('Error!', error.message)})
-      }
+
+      // for (dataPoint in localData) {
+      //   let fd = new FormData()
+      //   for (let [key, value] of dataPoint) {
+      //     fd.append(key, value)
+      //   }
+
+      //   fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
+      //   .then(response => { 
+      //         console.log(response) })
+      //   .catch(error => {
+      //         alert('Error!', error.message)})
+      // }
 
       alert('Success!')
 
