@@ -37,16 +37,16 @@ function setUpGoogleSheets() {
         fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
         .then(response => { 
           console.log(`SUCCESS: ${response}`) })
+        .then(() => delete localData[dataPoint])
         .catch(error => {
           console.log(`ERROR: ${response}`)
           failedSubmissions += 1
         })
-
-
         totalSubmissions += 1
       }
 
       alert('Success!', `Uploaded ${totalSubmissions - failedSubmissions}/${totalSubmissions} matches`)
+      localStorage.setItem('scouting_pass_data', JSON.stringify(localData))
 
       btn.disabled = false
       btn.innerHTML = "Send to Google Sheets"
