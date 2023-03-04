@@ -943,6 +943,8 @@ function save_match_local_data() {
   // Fetch key for the current match data
   const key = `${document.getElementById("input_m").value},${getLevel()},${document.getElementById("input_t").value}`
 
+  console.log(data)
+
   // Add or overwrite existing data for key
   stored_object[key] = data
   
