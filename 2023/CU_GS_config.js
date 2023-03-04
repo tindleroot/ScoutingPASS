@@ -19,7 +19,7 @@ var config_data = `
       "type": "event",
       "defaultValue": "2023wasno",
       "required": "true",
-      "disabled": "true"
+      "disabled": "false"
     },
     { "name": "Match Level",
       "code": "l",
@@ -94,7 +94,7 @@ var config_data = `
       "gsCol": "autoCrossedCharginStation",
       "type": "bool"
     },
-    { "name": "Mobility?",
+    { "name": "Left Community?",
       "code": "am",
       "gsCol": "autoMobility",
       "type": "bool"
@@ -190,53 +190,16 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Driver Skill",
-      "code": "ds",
-      "gsCol": "driverSkill",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Links Scored",
-      "code": "ls",
-      "gsCol": "linksScored",
-      "type": "counter"
-    },
     { "name": "Defense Rating",
       "code": "dr",
       "gsCol": "defenseRating",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
         "g": "Good<br>",
-        "e": "Excellent<br>",
+        "p": "Poor<br>",
         "x": "Did not play defense"
       },
       "defaultValue": "x"
-    },
-    { "name": "Swerve drive?",
-      "code": "sd",
-      "gsCol": "swerveDrive",
-      "type": "bool"
-    },
-    { "name": "Speed Rating",
-      "code": "sr",
-      "gsCol": "speedRating",
-      "type": "radio",
-      "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
-      },
-      "defaultValue":"3"
     },
     { "name": "Died/Immobilized",
       "code": "die",
@@ -248,15 +211,9 @@ var config_data = `
       "gsCol": "tippy",
       "type": "bool"
     },
-    { "name": "Dropped Cones (>2)",
+    { "name": "Dropped Pieces (>2)",
       "code": "dc",
-      "gsCol": "droppedCones",
-      "type": "bool"
-    },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "gsCol": "goodPartners",
+      "gsCol": "droppedPieces",
       "type": "bool"
     },
     { "name": "Comments",
