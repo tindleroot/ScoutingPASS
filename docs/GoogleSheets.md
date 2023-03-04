@@ -71,7 +71,7 @@ There is an extensive set-up process described in following section.  Follow the
             const nextRow = sheet.getLastRow() + 1
 
             const newRow = headers.map(function(header) {
-              return header === 'Date' ? new Date() : e.parameter[header].join(",")
+              return header === 'Date' ? new Date() : e.parameter[header]
             })
 
             sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
