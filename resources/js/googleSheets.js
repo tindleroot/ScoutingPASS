@@ -27,7 +27,9 @@ function setUpGoogleSheets() {
         for (let [key, value] of dataPoint) {
           fd.append(key, value)
         }
-        console.log(`Formdata: ${fd}\n`)
+        for (const [key, value] of fd) {
+          console.log(`${key}: ${value}\n`);
+        }
 
         fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
         .then(response => { 
