@@ -36,8 +36,9 @@ function setUpGoogleSheets() {
 
         fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
         .then(response => { 
-          console.log(`SUCCESS: ${response}`) })
-        .then(() => delete localData[dataPoint])
+          console.log(`SUCCESS: ${response}`)
+          delete localData[dataPoint]
+        })
         .catch(error => {
           console.log(`ERROR: ${response}`)
           failedSubmissions += 1
