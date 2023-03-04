@@ -28,18 +28,18 @@ function setUpGoogleSheets() {
         .catch(error => {
               alert('Error!', error.message)})
 
-      // for (dataPoint in localData) {
-      //   let fd = new FormData()
-      //   for (let [key, value] of dataPoint) {
-      //     fd.append(key, value)
-      //   }
+      for (dataPoint in localData) {
+        // let fd = new FormData()
+        // for (let [key, value] of dataPoint) {
+        //   fd.append(key, value)
+        // }
 
-      //   fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
-      //   .then(response => { 
-      //         console.log(response) })
-      //   .catch(error => {
-      //         alert('Error!', error.message)})
-      // }
+        fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
+        .then(response => { 
+              console.log(response) })
+        .catch(error => {
+              alert('Error!', error.message)})
+      }
 
       alert('Success!')
 
