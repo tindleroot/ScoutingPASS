@@ -84,12 +84,12 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable",
+    { "name": "Crossed Cable (between charge station and field wall)",
       "code": "acc",
       "gsCol": "autoCrossedCable",
       "type": "bool"
     },
-    { "name": "Crossed Charging Station",
+    { "name": "Crossed over Charging Station",
       "code": "acs",
       "gsCol": "autoCrossedCharginStation",
       "type": "bool"
@@ -113,11 +113,6 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Cycle Timer",
-      "code": "tct",
-      "gsCol": "cycleTimes",
-      "type": "cycle"
-    },
     { "name": "Grid Scoring",
       "code": "tsg",
       "gsCol": "gridScoring",
