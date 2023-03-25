@@ -22,29 +22,26 @@ function setUpGoogleSheets() {
     let totalSubmissions = 0
     let failedSubmissions = 0
 
-    let rows = []
+    // let rows = []
     for (const dataPoint in localData) {
       let fd = new FormData()
       for (const key in localData[dataPoint]) {
         fd.append(key, localData[dataPoint][key])
       }
-      rows.push(fd)
-      // totalSubmissions += 1
-    }
-
-    alert(rows)
-    await fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: { data: rows }})
+      await fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd})
         .then(response => { 
           console.log(`SUCCESS: ${response.body}`)
-          // delete localData[dataPoint]
-          // for (const key of localData) {
-          //   delete localData[key]
-          // }
+          delete localData[dataPoint]
+          for (const key of localData) {
+            delete localData[key]
+          }
         })
         .catch(error => {
           console.log(`ERROR: ${error}`)
-          // failedSubmissions += 1
+          failedSubmissions += 1
         })
+      totalSubmissions += 1
+    }
 
     alert(`Uploaded matches!`)
     localStorage.setItem('scouting_pass_data', JSON.stringify(localData))
