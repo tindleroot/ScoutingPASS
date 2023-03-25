@@ -32,7 +32,7 @@ function setUpGoogleSheets() {
         .then(response => { 
           console.log(`SUCCESS: ${response.body}`)
           delete localData[dataPoint]
-          for (const key of localData) {
+          for (const key in localData) {
             delete localData[key]
           }
         })
