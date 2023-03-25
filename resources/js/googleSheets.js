@@ -32,10 +32,13 @@ function setUpGoogleSheets() {
       // totalSubmissions += 1
     }
 
-    await fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: rows })
+    await fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: { data: rows } })
         .then(response => { 
           console.log(`SUCCESS: ${response}`)
           // delete localData[dataPoint]
+          // for (const key of localData) {
+          //   delete localData[key]
+          // }
         })
         .catch(error => {
           console.log(`ERROR: ${error}`)
