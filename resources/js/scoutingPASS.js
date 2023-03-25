@@ -1199,9 +1199,9 @@ function onFieldClick(event) {
       changingInput.value = JSON.stringify(boxArr);
     }
     // If associated with cycleTimer - send New Cycle EVENT
-    if (cycleTimer != null) {
-      document.getElementById("cycle_" + cycleTimer.value).click();
-    }
+    // if (cycleTimer != null) {
+    //   document.getElementById("cycle_" + cycleTimer.value).click();
+    // }
   }
 
   drawFields()
