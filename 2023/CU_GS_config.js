@@ -84,7 +84,7 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable (between charge station and field wall)",
+    { "name": "Crossed over Cable Bump",
       "code": "acc",
       "gsCol": "autoCrossedCable",
       "type": "bool"
