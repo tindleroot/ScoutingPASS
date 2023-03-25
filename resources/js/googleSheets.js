@@ -32,6 +32,7 @@ function setUpGoogleSheets() {
       // totalSubmissions += 1
     }
 
+    alert(rows)
     await fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: { data: rows }})
         .then(response => { 
           console.log(`SUCCESS: ${response.body}`)
