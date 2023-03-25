@@ -17,7 +17,7 @@ var config_data = `
       "code": "e",
       "gsCol": "event",
       "type": "event",
-      "defaultValue": "2023mosl",
+      "defaultValue": "2023wasam",
       "required": "true",
       "disabled": "true"
     },
