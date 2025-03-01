@@ -887,9 +887,9 @@ function save_match_local_data() {
   data = getData(dataFormat)
 
   // Regenerate QR Code
-  // qr.makeCode(data)
+  qr.makeCode(data)
 
-  // updateQRHeader()
+  updateQRHeader()
   return true
 }
 
