@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025wasno",
+      "defaultValue": "2025wasam",
       "required": "true"
     },
     { "name": "Match Level",
