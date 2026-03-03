@@ -142,18 +142,6 @@ var config_data = `
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter"
-    },
-    { "name": "Pickup from Depot",
-      "code": "tfd",
-      "type": "bool"
-    },
-    { "name": "Pickup from Outpost",
-      "code": "tfo",
-      "type": "bool"
-    },
-    { "name": "Pickup from Floor",
-      "code": "tff",
-      "type": "bool"
     }
   ],
   "endgame": [
@@ -222,21 +210,12 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
-    },
     { "name": "Was Defended",
       "code": "def",
       "type": "bool"
     },
-    { "name": "Excessive Penalties",
-      "code": "pen",
-      "type": "bool"
-    },
     { "name": "Fuel Percentage",
-      "tooltip": "What percentage of the total fuel for this alliance did this robot score?",
+      "tooltip": "What percentage of this robot's shots went in?",
       "code": "pct",
       "type": "number",
       "min": 0,
