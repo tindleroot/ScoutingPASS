@@ -1114,8 +1114,8 @@ function drawFields(name) {
     var imgWidth = img.width;
     var imgHeight = img.height;
     let scale_factor = Math.min(ctx.canvas.width / img.width, ctx.canvas.height / img.height);
-    let newWidth = img.width * scale_factor;
-    let newHeight = img.height * scale_factor;
+    let newWidth = Math.round(img.width * scale_factor);
+    let newHeight = Math.round(img.height * scale_factor);
     if (newWidth > 0) {
       ctx.canvas.width = newWidth
     }
