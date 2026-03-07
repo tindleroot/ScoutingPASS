@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2026week0",
+      "defaultValue": "2026wabon",
       "required": "true"
     },
     { "name": "Match Level",
@@ -149,9 +149,9 @@ var config_data = `
       "code": "tc",
       "type": "radio",
       "choices": {
-        "1": "Level 1<br>",
-        "2": "Level 2<br>",
-        "3": "Level 3<br>",
+        "c1": "Level 1<br>",
+        "c2": "Level 2<br>",
+        "c3": "Level 3<br>",
         "a": "Attempted<br>",
         "x": "Not Attempted"
       },
